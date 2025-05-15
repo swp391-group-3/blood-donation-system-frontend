@@ -31,9 +31,17 @@ export default function Navbar() {
             >
               <Droplet
                 className={`text-white drop-shadow-md transition-all duration-300 ${scroll ? "h-5 w-5" : "h-6 w-6"}`}
-
               />
             </motion.div>
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className={`font-bold text-white drop-shadow-md transition-all duration-300 ${scroll ? "text-xl" : "text-2xl"
+                }`}
+            >
+              LifeDrop
+            </motion.span>
           </a>
         </div>
       </div>
