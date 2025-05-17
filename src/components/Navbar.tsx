@@ -8,7 +8,7 @@ interface NavbarProps {
 const Navbar = ({ scrollY }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
-  const [isDarkTheme, setIsDarkTheme] = useState(false)
+  const [isDarkTheme, setIsDarkTheme] = useState(true)
 
   const navItems = [
     { name: "About", href: "#about" },
@@ -51,9 +51,8 @@ const Navbar = ({ scrollY }: NavbarProps) => {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        scrollY > 50 ? "bg-white py-2" : "bg-transparent py-4"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-500 ${scrollY > 50 ? "bg-white py-2" : "bg-transparent py-4"
+        }`}
       style={{
         backgroundColor:
           scrollY > 50 ? (isDarkTheme ? "#1f2937" : "white") : isDarkTheme ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.2)",
@@ -359,9 +358,8 @@ const Navbar = ({ scrollY }: NavbarProps) => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`focus:outline-none ${
-              isDarkTheme ? "text-white" : scrollY > 50 ? "text-gray-800" : "text-white"
-            }`}
+            className={`focus:outline-none ${isDarkTheme ? "text-white" : scrollY > 50 ? "text-gray-800" : "text-white"
+              }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
