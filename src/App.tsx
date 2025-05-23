@@ -1,7 +1,9 @@
-import { Button } from '@/components/ui/button';
+import LoginForm from "./components/LoginForm";
 
 const App = () => {
-    return <Button>Click me</Button>;
+   return (
+        <LoginForm />
+   )
 };
 
 export default App;
