@@ -1,10 +1,15 @@
 import { HeartPlus } from "lucide-react"
 import ToggleThemeButton from "@/components/ToggleThemeButton"
 import { LoginForm } from "@/components/LoginForm"
+import { motion } from "framer-motion";
 
 export default function LoginPage() {
     return (
-        <div className="grid min-h-svh lg:grid-cols-2">
+        <motion.div className="grid min-h-svh lg:grid-cols-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+        >
             <div className="flex flex-col gap-4 p-6 md:p-10">
                 <div className="flex justify-between gap-2">
                     <a href="#" className="flex items-center gap-2 font-medium">
@@ -29,6 +34,6 @@ export default function LoginPage() {
                     </p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
