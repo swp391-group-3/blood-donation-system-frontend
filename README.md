@@ -1,54 +1,12 @@
-# React + TypeScript + Vite
+# Figma
+## Dark Theme: 
+![Screenshot_24-May_14-09-48_11514](https://github.com/user-attachments/assets/097b4069-7b48-4db1-8fb5-17c6b09f40f3)
+## Light Theme:
+![Screenshot_24-May_14-10-55_10763](https://github.com/user-attachments/assets/a85adec0-277d-44a1-b61b-da19d33988a0)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Web UI:
+## Light Theme: 
+![Screenshot_24-May_14-11-47_21151](https://github.com/user-attachments/assets/ceeb48da-d6f5-4311-8ed2-4df007485fb5)
+## Dark Theme:
+![Screenshot_24-May_14-12-39_24940](https://github.com/user-attachments/assets/13a0bc8a-ca47-43c2-a01e-e61c83d495d4)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
