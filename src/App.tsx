@@ -6,7 +6,7 @@ export default function LoginPage() {
     return (
         <div className="grid min-h-svh lg:grid-cols-2">
             <div className="flex flex-col gap-4 p-6 md:p-10">
-                <div className="flex justify-center gap-2 md:justify-start">
+                <div className="flex justify-between gap-2">
                     <a href="#" className="flex items-center gap-2 font-medium">
                         <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
                             <HeartPlus className="size-4" />
@@ -21,12 +21,13 @@ export default function LoginPage() {
                     </div>
                 </div>
             </div>
-            <div className="relative hidden bg-muted lg:block">
-                <img
-                    src="/placeholder.svg"
-                    alt="Image"
-                    className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-                />
+            <div className="relative hidden lg:flex items-center justify-center bg-muted">
+                <div className="relative z-10 max-w-lg text-center px-8 py-12">
+                    <h2 className="text-2xl font-bold mb-4">Welcome back!</h2>
+                    <p className="italic text-lg text-muted-foreground">
+                    “Every drop counts. Thank you for making a difference.”
+                    </p>
+                </div>
             </div>
         </div>
     )
