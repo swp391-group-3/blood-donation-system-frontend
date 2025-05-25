@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function LoginPage() {
     return (
-        <motion.div className="grid min-h-svh lg:grid-cols-2"
+        <motion.div className="grid min-h-svg lg:grid-cols-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
