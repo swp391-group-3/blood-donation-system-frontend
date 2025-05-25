@@ -1,3 +1,4 @@
+import {useState} from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -10,6 +11,10 @@ export function RegisterForm({
     className,
     ...props
 }: React.ComponentPropsWithoutRef<"form">) {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
     return (
         <form className={cn("flex flex-col gap-6", className)} {...props}>
             <div className="flex flex-col items-center gap-2 text-center">
@@ -21,13 +26,25 @@ export function RegisterForm({
             <div className="grid gap-6">
                 <div className="grid gap-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="m@example.com" required />
+                    <Input 
+                        id="email" 
+                        type="email" 
+                        placeholder="m@example.com" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required 
+                    />
                 </div>
                 <div className="grid gap-2">
                     <div className="flex items-center">
                         <Label htmlFor="password">Password</Label>
                     </div>
-                    <PasswordInput id="password" required />
+                    <PasswordInput 
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)} 
+                        required 
+                    />
                 </div>
                 <div className="grid gap-2">
                     <div className="flex items-center">
