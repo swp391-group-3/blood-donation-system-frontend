@@ -12,9 +12,9 @@ export default function LoginPage() {
         >
             <div className="relative hidden lg:flex items-center justify-center bg-muted">
                 <div className="relative z-10 max-w-lg text-center px-8 py-12">
-                    <h2 className="text-2xl font-bold mb-4">Welcome back!</h2>
+                    <h2 className="text-2xl font-bold mb-4">Join our community!</h2>
                     <p className="italic text-lg text-muted-foreground">
-                    “Every drop counts. Thank you for making a difference.”
+                    “Together we can make a difference. Every donation saves lives and brings hope to those in need.”
                     </p>
                 </div>
             </div>
