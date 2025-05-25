@@ -12,14 +12,17 @@ type PasswordInputProps = Omit<
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   validate?: (val: string) => boolean;
   errorMessage?: string;
+  forceTouched?: boolean;
 };
 
-export function PasswordInput({ id, value, onChange, validate, errorMessage, ...props }: PasswordInputProps) {
+export function PasswordInput({ id, value, onChange, validate, errorMessage, forceTouched = false, ...props }: PasswordInputProps) {
   const [show, setShow] = useState(false);
   const [touched, setTouched] = useState(false);
 
   const isValid = validate ? validate(value) : value.length >= 6;
   const errorMsg = errorMessage || "Password must be at least 6 characters";
+  const isTouched = touched || forceTouched;
+  
   return (
     <div className="flex flex-col">
       <div className="relative">
