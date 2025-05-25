@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FcGoogle } from "react-icons/fc";
 import { PasswordInput } from "@/components/PasswordInput"
+import { Checkbox } from "@/components/ui/checkbox"
 
 export function RegisterForm({
     className,
@@ -33,6 +34,15 @@ export function RegisterForm({
                         <Label htmlFor="password">Confirm Password</Label>
                     </div>
                     <PasswordInput id="password" required />
+                </div>
+                <div className="flex items-center gap-2">
+                    <Checkbox id="terms" required />
+                    <Label htmlFor="terms" className="text-sm whitespace-nowrap">
+                        I have read and agreed to
+                        <a href="#" className="underline underline-offset-4">
+                        Terms & Conditions
+                        </a>
+                    </Label>
                 </div>
                 <Button type="submit" className="w-full">
                     Sign Up
