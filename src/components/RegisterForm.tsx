@@ -14,9 +14,35 @@ export function RegisterForm({
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [termsChecked, setTermsChecked] = useState(false);
 
+    const [emailError, setEmailError] = useState("");
+    const [termsError, setTermsError] = useState("");
+
+    const [submitAttempted, setSubmitAttempted] = useState(false);
+    
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setSubmitAttempted(true);
+        let valid = true;
+        if (!email.trim()) {
+        setEmailError("Email is required");
+        valid = false;
+        } else {
+        setEmailError("");
+        }
+
+        if (!termsChecked) {
+        setTermsError("You must agree to Terms & Conditions");
+        valid = false;
+        } else {
+        setTermsError("");
+        }
+        if (!valid) return;
+    };
+    
     return (
-        <form className={cn("flex flex-col gap-6", className)} {...props}>
+        <form onSubmit={handleSubmit} className={cn("flex flex-col gap-6", className)} {...props}>
             <div className="flex flex-col items-center gap-2 text-center">
                 <h1 className="text-2xl font-bold">Create your account</h1>
                 <p className="text-balance text-sm text-muted-foreground">
@@ -32,8 +58,15 @@ export function RegisterForm({
                         placeholder="m@example.com" 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        required 
+                        aria-invalid={!!(submitAttempted && emailError)}
+                        aria-describedby="email-error"
+                        className={cn(submitAttempted && emailError ? "border-red-500 focus:border-red-500" : "")}
                     />
+                    {submitAttempted && emailError && (
+                        <p id="email-error" className="mt-2 text-sm text-red-600">
+                            {emailError}
+                        </p>
+                    )}
                 </div>
                 <div className="grid gap-2">
                     <div className="flex items-center">
@@ -43,7 +76,9 @@ export function RegisterForm({
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)} 
-                        required 
+                        forceTouched={submitAttempted}
+                        required
+                        
                     />
                 </div>
                 <div className="grid gap-2">
@@ -56,18 +91,29 @@ export function RegisterForm({
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         validate={(val) => val === password}
                         errorMessage="Passwords do not match"
+                        forceTouched={submitAttempted} 
                         required 
                     />
                 </div>
-                <div className="flex items-center gap-2">
-                    <Checkbox id="terms" required />
-                    <Label htmlFor="terms" className="text-sm whitespace-nowrap">
-                        I have read and agreed to
-                        <a href="#" className="underline underline-offset-4">
-                        Terms & Conditions
-                        </a>
-                    </Label>
+                <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                        <Checkbox 
+                            id="terms"
+                            checked={termsChecked}
+                            onCheckedChange={(checked) => setTermsChecked(!!checked)} 
+                        />
+                        <Label htmlFor="terms" className="text-sm whitespace-nowrap">
+                            I have read and agreed to
+                            <a href="#" className="underline underline-offset-4">
+                            Terms & Conditions
+                            </a>
+                        </Label>
+                    </div>
+                    {submitAttempted && termsError && (
+                        <p className="mt-2 text-sm text-red-600">{termsError}</p>
+                    )}
                 </div>
+
                 <Button type="submit" className="w-full">
                     Sign Up
                 </Button>
