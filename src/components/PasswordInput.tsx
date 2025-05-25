@@ -3,17 +3,23 @@ import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 
-type PasswordInputProps = React.ComponentPropsWithoutRef<typeof Input> & {
+type PasswordInputProps = Omit<
+  React.ComponentPropsWithoutRef<typeof Input>,
+  "value" | "onChange"
+  > & {
   id: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  validate?: (val: string) => boolean;
+  errorMessage?: string;
 };
 
-export function PasswordInput({ id, ...props }: PasswordInputProps) {
+export function PasswordInput({ id, value, onChange, validate, errorMessage, ...props }: PasswordInputProps) {
   const [show, setShow] = useState(false);
-  const [value, setValue] = useState("");
   const [touched, setTouched] = useState(false);
 
-  const isValid = value.length >= 6;
-
+  const isValid = validate ? validate(value) : value.length >= 6;
+  const errorMsg = errorMessage || "Password must be at least 6 characters";
   return (
     <div className="flex flex-col">
       <div className="relative">
@@ -21,7 +27,7 @@ export function PasswordInput({ id, ...props }: PasswordInputProps) {
           id={id}
           type={show ? "text" : "password"}
           value={value}
-          onChange={(e) => (setValue(e.target.value))}
+          onChange={onChange}
           onBlur={() => setTouched(true)}
           className={cn(
             "pr-10", 
@@ -46,7 +52,7 @@ export function PasswordInput({ id, ...props }: PasswordInputProps) {
       </div>
       {touched && !isValid && (
         <p id={`${id}-error`} className="mt-2 text-sm text-red-600">
-          Password at least 6 characters
+          {errorMsg}
         </p>
       )}
     </div>
