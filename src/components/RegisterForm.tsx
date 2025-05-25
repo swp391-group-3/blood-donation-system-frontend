@@ -48,9 +48,16 @@ export function RegisterForm({
                 </div>
                 <div className="grid gap-2">
                     <div className="flex items-center">
-                        <Label htmlFor="password">Confirm Password</Label>
+                        <Label htmlFor="confirm-password">Confirm Password</Label>
                     </div>
-                    <PasswordInput id="password" required />
+                    <PasswordInput 
+                        id="password" 
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        validate={(val) => val === password}
+                        errorMessage="Passwords do not match"
+                        required 
+                    />
                 </div>
                 <div className="flex items-center gap-2">
                     <Checkbox id="terms" required />
