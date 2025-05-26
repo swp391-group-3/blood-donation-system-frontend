@@ -2,6 +2,8 @@ import { HeartPlus } from "lucide-react"
 import ToggleThemeButton from "@/components/ToggleThemeButton"
 import { LoginForm } from "@/components/LoginForm"
 import { motion } from "framer-motion";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function LoginPage() {
     return (
@@ -27,12 +29,25 @@ export default function LoginPage() {
                 </div>
             </div>
             <div className="relative hidden lg:flex items-center justify-center bg-muted">
-                <div className="relative z-10 max-w-lg text-center px-8 py-12">
-                    <h2 className="text-2xl font-bold mb-4">Welcome back!</h2>
-                    <p className="italic text-lg text-muted-foreground">
-                    “Every drop counts. Thank you for making a difference.”
-                    </p>
-                </div>
+                <BackgroundBeamsWithCollision>
+                    <div className="relative w-full h-screen overflow-hidden">
+                        <div className="relative z-10 flex flex-col items-center justify-start h-full px-4 pt-32 text-center">
+                            <div>
+                                <DotLottieReact
+                                    src="https://lottie.host/4ed86981-f2b2-40bf-bd0d-58db3e122b73/3VpitcEEaj.lottie"
+                                    loop
+                                    autoplay
+                                />
+                            </div>
+                            <p className="mt-4 text-lg text-gray-300 md:text-xl max-w-lg">
+                                <h2 className="text-2xl font-bold mb-4">Welcome back!</h2>
+                                <p className="italic text-lg text-muted-foreground">
+                                    “Every drop counts. Thank you for making a difference.”
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                </BackgroundBeamsWithCollision>
             </div>
         </motion.div>
     )
