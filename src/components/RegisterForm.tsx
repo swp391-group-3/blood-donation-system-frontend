@@ -93,7 +93,17 @@ export function RegisterForm({
                         required 
                     />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button 
+                    type="submit"
+                    disabled={!isFormValid}
+                    className={cn(
+                        "w-full transition-colors", 
+                        isFormValid
+                        ? "bg-zinc-950 hover:bg-zinc-950 text-white"
+                        : "bg-gray-300 text-gray-500",
+                        "disabled:opacity-50 disabled:cursor-not-allowed"
+                    )}
+                >
                     Sign Up
                 </Button>
                 <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
