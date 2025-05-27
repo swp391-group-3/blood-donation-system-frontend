@@ -16,8 +16,14 @@ export function RegisterForm({
     const [confirmPassword, setConfirmPassword] = useState("");
 
     const [emailError, setEmailError] = useState("");
-
     const [submitAttempted, setSubmitAttempted] = useState(false);
+
+    const isEmailValid = email.trim().length > 0
+    const isPasswordValid = password.length >= 6
+    const isPasswordsMatch = confirmPassword.length > 0 && confirmPassword === password
+
+    const isFormValid = isEmailValid && isPasswordValid && isPasswordsMatch
+    
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -83,7 +89,7 @@ export function RegisterForm({
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         validate={(val) => val === password}
                         errorMessage="Passwords do not match"
-                        forceTouched={submitAttempted} 
+                        forceTouched={true} 
                         required 
                     />
                 </div>
