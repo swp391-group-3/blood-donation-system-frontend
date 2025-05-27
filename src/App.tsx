@@ -27,7 +27,7 @@ export default function LoginPage() {
                     </div>
                 </div>
             </div>
-            <div className="relative hidden lg:flex items-center justify-center bg-muted w-full h-full">
+            <div className="relative hidden lg:flex items-center justify-center bg-muted w-full h-full dark:bg-zinc-800">
                 <div className="relative w-full h-lvh overflow-hidden flex items-center justify-center">
                     <BackgroundBeamsWithCollision>
                         <div className="relative z-10 flex flex-col items-center justify-start h-full px-4 pt-32 text-center">
