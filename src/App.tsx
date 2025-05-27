@@ -26,7 +26,7 @@ export default function LoginPage() {
                     </div>
                 </div>
             </div>
-            <div className="relative hidden lg:flex items-center justify-center bg-muted w-full h-full">
+            <div className="relative hidden lg:flex items-center justify-center bg-muted w-full h-full dark:bg-zinc-800">
                 <div className="relative w-full h-lvh overflow-hidden flex items-center justify-center">
                     <BackgroundBeamsWithCollision>
                         <div className="relative z-10 flex flex-col items-center justify-start h-full px-4 pt-32 text-center">
@@ -40,9 +40,9 @@ export default function LoginPage() {
                                 )}
                             </div>
                             <section className="mt-4 text-lg text-gray-300 md:text-xl max-w-lg">
-                                <h2 className="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">Welcome back!</h2>
+                                <h2 className="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">Join our community!</h2>
                                 <p className="italic text-lg text-muted-foreground">
-                                    “Every drop counts. Thank you for making a difference.”
+                                    "Together we can make a difference. Every donation saves lives and brings hope to those in need."
                                 </p>
                             </section>
                         </div>
