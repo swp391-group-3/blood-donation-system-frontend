@@ -1,4 +1,3 @@
-import { HeartPlus } from "lucide-react"
 import ToggleThemeButton from "@/components/ToggleThemeButton"
 import { LoginForm } from "@/components/LoginForm"
 import { motion } from "framer-motion";
@@ -34,7 +33,7 @@ export default function LoginPage() {
                                 />
                             </div>
                             <p className="mt-4 text-lg text-gray-300 md:text-xl max-w-lg">
-                                <h2 className="text-2xl font-bold mb-4">Welcome back!</h2>
+                                <h2 className="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">Welcome back!</h2>
                                 <p className="italic text-lg text-muted-foreground">
                                     “Every drop counts. Thank you for making a difference.”
                                 </p>
