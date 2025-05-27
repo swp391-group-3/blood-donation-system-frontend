@@ -90,9 +90,7 @@ export function RegisterForm({
             </p>
           ) : (
             emailValue && (
-              <p className="text-sm text-green-600">
-                Email looks good!
-              </p>
+              <span className="text-sm text-green-600"></span>             
             )
           )}
         </div>
