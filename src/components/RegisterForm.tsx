@@ -114,7 +114,7 @@ export function RegisterForm({
               className="absolute right-2 top-1/2 -translate-y-1/2 focus:outline-none"
               tabIndex={-1}
             >
-              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
             </button>
           </div>
           {errors.password && (
@@ -143,7 +143,7 @@ export function RegisterForm({
               className="absolute right-2 top-1/2 -translate-y-1/2 focus:outline-none"
               tabIndex={-1}
             >
-              {showConfirm ? <EyeOff size={20} /> : <Eye size={20} />}
+              {showConfirm ? <Eye size={20} /> : <EyeOff size={20} />}
             </button>
           </div>
           {errors.confirmPassword && (
@@ -162,7 +162,7 @@ export function RegisterForm({
           className={cn(
             "w-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
             isValid
-              ? "bg-zinc-950 hover:bg-zinc-950 text-white"
+              ? "bg-zinc-950 hover:bg-zinc-950 text-white "
               : "bg-gray-300 text-gray-500"
           )}
         >
@@ -175,6 +175,7 @@ export function RegisterForm({
           </span>
           <div className="absolute inset-0 top-1/2 border-t border-border" />
         </div>
+
 
         <Button variant="outline" className="w-full">
           <FcGoogle className="h-5 w-5" />
