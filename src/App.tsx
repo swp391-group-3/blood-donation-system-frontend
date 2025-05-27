@@ -14,7 +14,7 @@ export default function LoginPage() {
         <motion.div className="grid h-screen lg:grid-cols-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
         >
             <div className="flex flex-col gap-4 p-6 md:p-10">
                 <div className="flex justify-between gap-2">
