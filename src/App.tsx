@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import ToggleThemeButton from "@/components/ToggleThemeButton"
 import { LoginForm } from "@/components/LoginForm"
 import { motion } from "framer-motion";
@@ -5,6 +6,11 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function LoginPage() {
+    
+    const [mounted, setMounted] = useState(false)
+    
+    useEffect(() => { setMounted(true) }, [])
+    
     return (
         <motion.div className="grid min-h-svh lg:grid-cols-2"
             initial={{ opacity: 0 }}
@@ -26,11 +32,13 @@ export default function LoginPage() {
                     <BackgroundBeamsWithCollision>
                         <div className="relative z-10 flex flex-col items-center justify-start h-full px-4 pt-32 text-center">
                             <div>
-                                <DotLottieReact
-                                    src="https://lottie.host/4ed86981-f2b2-40bf-bd0d-58db3e122b73/3VpitcEEaj.lottie"
-                                    loop
-                                    autoplay
-                                />
+                                {mounted && (
+                                    <DotLottieReact
+                                        src="https://lottie.host/4ed86981-f2b2-40bf-bd0d-58db3e122b73/3VpitcEEaj.lottie"
+                                        loop
+                                        autoplay
+                                    />
+                                )}
                             </div>
                             <section className="mt-4 text-lg text-gray-300 md:text-xl max-w-lg">
                                 <h2 className="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">Welcome back!</h2>
