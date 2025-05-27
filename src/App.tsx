@@ -32,12 +32,12 @@ export default function LoginPage() {
                                     autoplay
                                 />
                             </div>
-                            <p className="mt-4 text-lg text-gray-300 md:text-xl max-w-lg">
+                            <section className="mt-4 text-lg text-gray-300 md:text-xl max-w-lg">
                                 <h2 className="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">Welcome back!</h2>
                                 <p className="italic text-lg text-muted-foreground">
                                     “Every drop counts. Thank you for making a difference.”
                                 </p>
-                            </p>
+                            </section>
                         </div>
                     </BackgroundBeamsWithCollision>
                 </div>
