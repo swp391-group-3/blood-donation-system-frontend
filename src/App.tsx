@@ -1,11 +1,17 @@
-import { HeartPlus } from "lucide-react"
+import { useEffect, useState } from "react";
 import ToggleThemeButton from "@/components/ToggleThemeButton"
 import { RegisterForm } from "@/components/RegisterForm"
 import { motion } from "framer-motion";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function LoginPage() {
+    const [mounted, setMounted] = useState(false)
+    
+    useEffect(() => { setMounted(true) }, [])
+    
     return (
-        <motion.div className="grid min-h-svg lg:grid-cols-2"
+        <motion.div className="grid h-screen lg:grid-cols-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -20,12 +26,27 @@ export default function LoginPage() {
                     </div>
                 </div>
             </div>
-            <div className="relative hidden lg:flex items-center justify-center bg-muted">
-                <div className="relative z-10 max-w-lg text-center px-8 py-12">
-                    <h2 className="text-2xl font-bold mb-4">Join our community!</h2>
-                    <p className="italic text-lg text-muted-foreground">
-                    “Together we can make a difference. Every donation saves lives and brings hope to those in need.”
-                    </p>
+            <div className="relative hidden lg:flex items-center justify-center bg-muted w-full h-full">
+                <div className="relative w-full h-lvh overflow-hidden flex items-center justify-center">
+                    <BackgroundBeamsWithCollision>
+                        <div className="relative z-10 flex flex-col items-center justify-start h-full px-4 pt-32 text-center">
+                            <div>
+                                {mounted && (
+                                    <DotLottieReact
+                                        src="https://lottie.host/4ed86981-f2b2-40bf-bd0d-58db3e122b73/3VpitcEEaj.lottie"
+                                        loop
+                                        autoplay
+                                    />
+                                )}
+                            </div>
+                            <section className="mt-4 text-lg text-gray-300 md:text-xl max-w-lg">
+                                <h2 className="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">Welcome back!</h2>
+                                <p className="italic text-lg text-muted-foreground">
+                                    “Every drop counts. Thank you for making a difference.”
+                                </p>
+                            </section>
+                        </div>
+                    </BackgroundBeamsWithCollision>
                 </div>
             </div>
         </motion.div>
