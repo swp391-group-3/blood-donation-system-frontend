@@ -90,7 +90,7 @@ export function RegisterForm({
             </p>
           ) : (
             emailValue && (
-              <p className="mt-2 text-sm text-green-600">
+              <p className="text-sm text-green-600">
                 Email looks good!
               </p>
             )
@@ -162,7 +162,7 @@ export function RegisterForm({
           className={cn(
             "w-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
             isValid
-              ? "bg-zinc-950 hover:bg-zinc-950 text-white "
+              ? "bg-zinc-950 dark:bg-white hover:bg-zinc-950 dark:hover:bg-zinc-300  text-white dark:text-zinc-950 "
               : "bg-gray-300 text-gray-500"
           )}
         >
