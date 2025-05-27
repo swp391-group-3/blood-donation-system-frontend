@@ -14,12 +14,6 @@ export default function LoginPage() {
         >
             <div className="flex flex-col gap-4 p-6 md:p-10">
                 <div className="flex justify-between gap-2">
-                    <a href="#" className="flex items-center gap-2 font-medium">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
-                            <HeartPlus className="size-4" />
-                        </div>
-                        BloodBridge
-                    </a>
                     <ToggleThemeButton />
                 </div>
                 <div className="flex flex-1 items-center justify-center">
@@ -29,8 +23,8 @@ export default function LoginPage() {
                 </div>
             </div>
             <div className="relative hidden lg:flex items-center justify-center bg-muted">
-                <BackgroundBeamsWithCollision>
-                    <div className="relative w-full h-screen overflow-hidden">
+                <div className="relative w-full h-screen overflow-hidden">
+                    <BackgroundBeamsWithCollision>
                         <div className="relative z-10 flex flex-col items-center justify-start h-full px-4 pt-32 text-center">
                             <div>
                                 <DotLottieReact
@@ -46,8 +40,8 @@ export default function LoginPage() {
                                 </p>
                             </p>
                         </div>
-                    </div>
-                </BackgroundBeamsWithCollision>
+                    </BackgroundBeamsWithCollision>
+                </div>
             </div>
         </motion.div>
     )
