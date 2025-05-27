@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FcGoogle } from "react-icons/fc";
 import { PasswordInput } from "@/components/PasswordInput"
-import { Checkbox } from "@/components/ui/checkbox"
+
 
 export function RegisterForm({
     className,
@@ -14,10 +14,8 @@ export function RegisterForm({
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [termsChecked, setTermsChecked] = useState(false);
 
     const [emailError, setEmailError] = useState("");
-    const [termsError, setTermsError] = useState("");
 
     const [submitAttempted, setSubmitAttempted] = useState(false);
     
@@ -31,13 +29,7 @@ export function RegisterForm({
         } else {
         setEmailError("");
         }
-
-        if (!termsChecked) {
-        setTermsError("You must agree to Terms & Conditions");
-        valid = false;
-        } else {
-        setTermsError("");
-        }
+        
         if (!valid) return;
     };
     
@@ -95,25 +87,6 @@ export function RegisterForm({
                         required 
                     />
                 </div>
-                <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
-                        <Checkbox 
-                            id="terms"
-                            checked={termsChecked}
-                            onCheckedChange={(checked) => setTermsChecked(!!checked)} 
-                        />
-                        <Label htmlFor="terms" className="text-sm whitespace-nowrap">
-                            I have read and agreed to
-                            <a href="#" className="underline underline-offset-4">
-                            Terms & Conditions
-                            </a>
-                        </Label>
-                    </div>
-                    {submitAttempted && termsError && (
-                        <p className="mt-2 text-sm text-red-600">{termsError}</p>
-                    )}
-                </div>
-
                 <Button type="submit" className="w-full">
                     Sign Up
                 </Button>
