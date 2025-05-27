@@ -1,7 +1,11 @@
-import { Button } from '@/components/ui/button';
+import LoginPage from './pages/auth/LoginPage';
 
-const App = () => {
-    return <Button>Click me</Button>;
-};
+function App() {
+    return (
+        <div>
+            <LoginPage />
+        </div>
+    );
+}
 
 export default App;
