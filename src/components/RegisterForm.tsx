@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,6 +11,7 @@ export function RegisterForm({
     className,
     ...props
 }: React.ComponentPropsWithoutRef<"form">) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -18,7 +19,8 @@ export function RegisterForm({
     const [emailError, setEmailError] = useState("");
     const [submitAttempted, setSubmitAttempted] = useState(false);
 
-    const isEmailValid = email.trim().length > 0
+    const isEmailFilled    = email.trim().length > 0
+    const isEmailValid     = emailPattern.test(email.trim())
     const isPasswordValid = password.length >= 6
     const isPasswordsMatch = confirmPassword.length > 0 && confirmPassword === password
 
@@ -38,6 +40,18 @@ export function RegisterForm({
         
         if (!valid) return;
     };
+
+    useEffect(() => {
+        if (!submitAttempted) return
+
+        if (!isEmailFilled) {
+            setEmailError("Email is required")
+        } else if (!isEmailValid) {
+            setEmailError("Invalid email format")
+        } else {
+            setEmailError("")
+        }
+    }, [email, submitAttempted])
     
     return (
         <form onSubmit={handleSubmit} className={cn("flex flex-col gap-6", className)} {...props}>
@@ -58,8 +72,23 @@ export function RegisterForm({
                         onChange={(e) => setEmail(e.target.value)}
                         aria-invalid={!!(submitAttempted && emailError)}
                         aria-describedby="email-error"
-                        className={cn(submitAttempted && emailError ? "border-red-500 focus:border-red-500" : "")}
+                        className={cn(
+                            emailError   ? "border-red-500 focus:border-red-500" :
+                            isEmailFilled && isEmailValid ? "border-green-500 focus:border-green-500" :
+                            ""
+                        )}
                     />
+                    {emailError ? (
+                        <p id="email-error" className="mt-2 text-sm text-red-600">
+                            {emailError}
+                        </p>
+                        ) : (
+                        isEmailFilled && isEmailValid && (
+                            <p id="email-success" className="mt-2 text-sm text-green-600">
+                            Email looks good!
+                            </p>
+                        )
+                    )}
                     {submitAttempted && emailError && (
                         <p id="email-error" className="mt-2 text-sm text-red-600">
                             {emailError}
