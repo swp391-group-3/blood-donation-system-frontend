@@ -1,9 +1,9 @@
-import LoginPage from './pages/auth/LoginPage';
+import MemberHomePage from './pages/MemberHomePage';
 
 function App() {
     return (
         <div>
-            <LoginPage />
+            <MemberHomePage />
         </div>
     );
 }
