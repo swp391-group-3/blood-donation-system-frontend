@@ -20,7 +20,12 @@ export function QuickActions() {
                                 <div
                                     className={`inline-flex p-5 rounded-full ${action.color} mb-3`}
                                 >
-                                    <action.icon style={{ width: '30px', height: '30px' }}/>
+                                    <action.icon
+                                        style={{
+                                            width: '30px',
+                                            height: '30px',
+                                        }}
+                                    />
                                 </div>
                                 <h2 className="font-medium text-xl text-zinc-950">
                                     {action.title}
