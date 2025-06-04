@@ -1,6 +1,6 @@
 import { HomepageLayout } from '@/components/HomepageLayout';
-import { WelcomeSection } from '@/components/WelcomeSection'
-import { QuickActions } from '@/components/QuickActions'
+import { WelcomeSection } from '@/components/WelcomeSection';
+import { QuickActions } from '@/components/QuickActions';
 
 export default function MemberHomePage() {
     return (

@@ -1,10 +1,12 @@
 import { actions } from '../../constants/quick-actions';
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 export function QuickActions() {
     return (
         <div>
-            <h2 className="text-lg font-semibold text-zinc-950 mb-4">Quick Actions</h2>
+            <h2 className="text-lg font-semibold text-zinc-950 mb-4">
+                Quick Actions
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {actions.map((action, index) => (
                     <Button
@@ -15,15 +17,19 @@ export function QuickActions() {
                     >
                         <Card className="h-full">
                             <CardContent className="p-6 text-center flex flex-col items-center">
-                                <div className={`inline-flex p-3 rounded-full ${action.color} mb-3`}>
-                                    <action.icon className="h-6 w-6" />   
+                                <div
+                                    className={`inline-flex p-3 rounded-full ${action.color} mb-3`}
+                                >
+                                    <action.icon className="h-6 w-6" />
                                 </div>
-                                <h3 className="font-medium text-zinc-950">{action.title}</h3>
+                                <h3 className="font-medium text-zinc-950">
+                                    {action.title}
+                                </h3>
                             </CardContent>
                         </Card>
                     </Button>
                 ))}
             </div>
         </div>
-    )
+    );
 }

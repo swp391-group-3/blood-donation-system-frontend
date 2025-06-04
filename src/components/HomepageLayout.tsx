@@ -14,10 +14,10 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
-    DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
-import { Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 interface HomepageLayoutProps {
     children: React.ReactNode;
@@ -56,13 +56,17 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
                             <DropdownMenu>
                                 <DropdownMenuTrigger>
                                     <Avatar>
-                                        <AvatarImage src="/avatars/sample-avatar.png"/>
+                                        <AvatarImage src="/avatars/sample-avatar.png" />
                                         <AvatarFallback>ND</AvatarFallback>
                                     </Avatar>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
-                                    <DropdownMenuItem>My Profile</DropdownMenuItem>
-                                    <DropdownMenuItem>View Health Record</DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        My Profile
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        View Health Record
+                                    </DropdownMenuItem>
                                     <DropdownMenuSeparator />
                                     <DropdownMenuItem>Logout</DropdownMenuItem>
                                 </DropdownMenuContent>
