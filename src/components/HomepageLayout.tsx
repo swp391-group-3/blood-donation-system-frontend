@@ -9,6 +9,15 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu"
+
+import { Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
 
 interface HomepageLayoutProps {
     children: React.ReactNode;
@@ -44,6 +53,20 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
                             >
                                 <Bell className="h-5 w-5" />
                             </Button>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger>
+                                    <Avatar>
+                                        <AvatarImage src="/avatars/sample-avatar.png"/>
+                                        <AvatarFallback>ND</AvatarFallback>
+                                    </Avatar>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    <DropdownMenuItem>My Profile</DropdownMenuItem>
+                                    <DropdownMenuItem>View Health Record</DropdownMenuItem>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem>Logout</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
                 </header>
