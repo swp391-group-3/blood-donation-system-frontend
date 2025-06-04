@@ -18,13 +18,13 @@ export function QuickActions() {
                         <Card className="h-full">
                             <CardContent className="p-6 text-center flex flex-col items-center">
                                 <div
-                                    className={`inline-flex p-3 rounded-full ${action.color} mb-3`}
+                                    className={`inline-flex p-5 rounded-full ${action.color} mb-3`}
                                 >
-                                    <action.icon className="h-6 w-6" />
+                                    <action.icon style={{ width: '30px', height: '30px' }}/>
                                 </div>
-                                <h3 className="font-medium text-zinc-950">
+                                <h2 className="font-medium text-xl text-zinc-950">
                                     {action.title}
-                                </h3>
+                                </h2>
                             </CardContent>
                         </Card>
                     </Button>
