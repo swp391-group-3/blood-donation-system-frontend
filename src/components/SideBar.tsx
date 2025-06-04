@@ -1,7 +1,7 @@
 import { Heart } from "lucide-react";
-import { sidebarItems } from "./sidebar-items";
-
-
+import { sidebarItems } from "../../constants/sidebar-items";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils"
 
 export function SideBar() {
     return (
@@ -11,6 +11,22 @@ export function SideBar() {
                     <Heart className="h-6 w-6 text-red-600"/>
                     <span className="text-xl font-bold text-zinc-950">BloodBridge</span>
                 </div>
+            </div>
+
+            <div className="p-4 space-y-2 flex-1">
+                {sidebarItems.map((item, index) => (
+                    <Button
+                        key={index}
+                        variant="ghost"
+                        className={cn(
+                            "w-full justify-start text-zinc-600 hover:text-zinc-900 hover:bg-gray-100",
+                            item.active && "bg-red-50 text-red-600"
+                        )}
+                    >
+                        <item.icon className="mr-3 h-4 w-4" />
+                        {item.label}
+                    </Button>
+                ))}
             </div>
         </div>
     );
