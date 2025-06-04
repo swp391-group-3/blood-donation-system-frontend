@@ -1,4 +1,5 @@
 import React from 'react';
+import { User, Bell } from 'lucide-react';
 import { SideBar } from './SideBar';
 import {
     Breadcrumb,
@@ -7,6 +8,7 @@ import {
     BreadcrumbList,
 } from '@/components/ui/breadcrumb';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 interface HomepageLayoutProps {
     children: React.ReactNode;
@@ -29,8 +31,20 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
                                     </BreadcrumbItem>
                                 </BreadcrumbList>
                             </Breadcrumb>
-                            <Badge variant="secondary">Member</Badge>
+                            <Badge variant="secondary">
+                                <User className="h-4 w-4" />
+                                Member
+                            </Badge>
                         </nav>
+                        <div className="flex items-center space-x-4">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="relative"
+                            >
+                                <Bell className="h-5 w-5" />
+                            </Button>
+                        </div>
                     </div>
                 </header>
                 {children}
