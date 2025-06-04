@@ -1,5 +1,13 @@
-import { House, Droplet, Calendar, Activity, Award, Heart, CircleAlert, Settings } from 'lucide-react';
-
+import {
+    House,
+    Droplet,
+    Calendar,
+    Activity,
+    Award,
+    Heart,
+    CircleAlert,
+    Settings,
+} from 'lucide-react';
 
 export const sidebarItems = [
     { icon: House, label: 'Dashboard', active: true },
@@ -9,5 +17,5 @@ export const sidebarItems = [
     { icon: Award, label: 'Achievements', active: false },
     { icon: Heart, label: 'Impact Tracker', active: false },
     { icon: CircleAlert, label: 'Emergency Alerts', active: false },
-    { icon: Settings, label: 'Settings', active: false }
+    { icon: Settings, label: 'Settings', active: false },
 ];

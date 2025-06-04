@@ -5,8 +5,8 @@ import {
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbList,
-} from "@/components/ui/breadcrumb"
-import { Badge } from "@/components/ui/badge"
+} from '@/components/ui/breadcrumb';
+import { Badge } from '@/components/ui/badge';
 
 interface HomepageLayoutProps {
     children: React.ReactNode;
@@ -23,13 +23,13 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
                             <Breadcrumb>
                                 <BreadcrumbList>
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink className="text-zinc-950 font-semibold text-lg">DashBoard</BreadcrumbLink>
+                                        <BreadcrumbLink className="text-zinc-950 font-semibold text-lg">
+                                            DashBoard
+                                        </BreadcrumbLink>
                                     </BreadcrumbItem>
                                 </BreadcrumbList>
                             </Breadcrumb>
-                            <Badge variant="secondary">
-                                Member
-                            </Badge>
+                            <Badge variant="secondary">Member</Badge>
                         </nav>
                     </div>
                 </header>
