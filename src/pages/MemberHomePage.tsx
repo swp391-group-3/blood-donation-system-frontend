@@ -1,11 +1,11 @@
 import { HomepageLayout } from '@/components/HomepageLayout';
 import { WelcomeSection } from '@/components/WelcomeSection';
 import { actions } from '../../constants/quick-actions';
-import { requests } from '../../constants/urgent-requests'
+import { requests } from '../../constants/urgent-requests';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge'
+import { Badge } from '@/components/ui/badge';
 import { Droplet, Heart, MapPin, Clock, Hospital, Dot } from 'lucide-react';
 
 export default function MemberHomePage() {
@@ -138,50 +138,66 @@ export default function MemberHomePage() {
                 <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
-                            <Hospital className="w-6 h-6 stroke-red-600"/>
+                            <Hospital className="w-6 h-6 stroke-red-600" />
                             <p className="text-2xl">Urgent Blood Request</p>
                         </CardTitle>
                         <CardContent className="space-y-4">
                             {requests.map((request, index) => (
                                 <Card
                                     key={index}
-                                    className={`border ${request.compatible ? "bg-green-50 border-green-200" : "bg-gray-50 border-gray-200"}`}                                
+                                    className={`border ${request.compatible ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}
                                 >
                                     <CardContent className="p-4">
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center space-x-3">
                                                 <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                                                    <span className="text-red-600 text-sm font-medium">{request.bloodType}</span>
+                                                    <span className="text-red-600 text-sm font-medium">
+                                                        {request.bloodType}
+                                                    </span>
                                                 </div>
                                                 <div>
-                                                    <h4 className="font-medium">{request.hospital}</h4>
+                                                    <h4 className="font-medium">
+                                                        {request.hospital}
+                                                    </h4>
                                                     <div className="flex items-center space-x-4 text-sm text-gray-500">
                                                         <span className="flex items-center">
                                                             <MapPin className="w-3 h-3 mr-1" />
-                                                            {request.distance} <Dot /> {request.type}
+                                                            {request.distance}{' '}
+                                                            <Dot />{' '}
+                                                            {request.type}
                                                         </span>
                                                         <span className="flex items-center">
-                                                            <Clock className="w-3 h-3 mr-1"/>
-                                                            Posted {request.postedDate}
+                                                            <Clock className="w-3 h-3 mr-1" />
+                                                            Posted{' '}
+                                                            {request.postedDate}
                                                         </span>
                                                     </div>
-                                                </div>                            
+                                                </div>
                                             </div>
                                             <div className="flex items-center space-x-2">
                                                 {request.compatible && (
-                                                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                                                    <Badge
+                                                        variant="secondary"
+                                                        className="bg-green-100 text-green-800"
+                                                    >
                                                         Compatible
                                                     </Badge>
                                                 )}
                                                 <Button
                                                     size="sm"
-                                                    className={request.compatible ? "bg-red-600 hover:bg-red-700" : "bg-gray-600 hover:bg-gray-700"}
+                                                    className={
+                                                        request.compatible
+                                                            ? 'bg-red-600 hover:bg-red-700'
+                                                            : 'bg-gray-600 hover:bg-gray-700'
+                                                    }
                                                 >
-                                                    {request.compatible ? "Response" : "Not Compatible"}
+                                                    {request.compatible
+                                                        ? 'Response'
+                                                        : 'Not Compatible'}
                                                 </Button>
                                             </div>
                                         </div>
-                                    </CardContent>    
+                                    </CardContent>
                                 </Card>
                             ))}
                             <Button variant="outline" className="w-full">
