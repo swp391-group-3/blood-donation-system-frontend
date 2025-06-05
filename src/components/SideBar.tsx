@@ -2,6 +2,14 @@ import { Heart } from 'lucide-react';
 import { sidebarItems } from '../../constants/sidebar-items';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export function SideBar() {
     return (
@@ -30,26 +38,25 @@ export function SideBar() {
                     </Button>
                 ))}
             </div>
-
-            <div className="p-4 border-t border-r border-zinc-300">
-                <div className="bg-red-50  border border-red-200 rounded-lg p-4">
-                    <div className="flex items-center justify-between space-x-3">
-                        <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                            <Heart className="w-4 h-4 text-red-600" />
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-red-900 text-sm">
-                                Help Save Lives
-                            </h3>
-                            <p className="text-xs text-red-700">
-                                Your next donation can save up to 3 lives
-                            </p>
-                        </div>
-                    </div>
-                    <Button className="bg-red-600 hover:bg-red-700 w-full mt-3 text-sm">
-                        Donate Now
-                    </Button>
-                </div>
+            <div className="flex items-center space-x-4">
+                <DropdownMenu>
+                    <DropdownMenuTrigger>
+                        <Avatar>
+                            <AvatarImage src="/avatars/sample-avatar.png" />
+                            <AvatarFallback>ND</AvatarFallback>
+                        </Avatar>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                        <DropdownMenuItem>
+                            My Profile
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            View Health Record
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>Logout</DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </div>
         </div>
     );
