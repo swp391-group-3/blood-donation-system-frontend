@@ -1,7 +1,4 @@
-import {
-    Heart,
-    LogOut,
-} from 'lucide-react';
+import { Heart, LogOut } from 'lucide-react';
 import { sidebarItems } from '../../constants/sidebar-items';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -53,7 +50,9 @@ export function SideBar() {
                             <AvatarFallback>SC</AvatarFallback>
                         </Avatar>
                         <div className="flex flex-col items-start">
-                            <span className="text-sm font-medium">Nam Dang</span>
+                            <span className="text-sm font-medium">
+                                Nam Dang
+                            </span>
                             <span className="text-xs text-gray-500">
                                 m@example.com
                             </span>
@@ -61,12 +60,8 @@ export function SideBar() {
                     </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-64">
-                    <DropdownMenuItem>
-                        My Profile
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        View Health Record
-                    </DropdownMenuItem>
+                    <DropdownMenuItem>My Profile</DropdownMenuItem>
+                    <DropdownMenuItem>View Health Record</DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
                         <LogOut className="mr-2 h-4 w-4" />
@@ -74,7 +69,6 @@ export function SideBar() {
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
-
         </div>
     );
 }
