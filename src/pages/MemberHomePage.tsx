@@ -3,7 +3,7 @@ import { WelcomeSection } from '@/components/WelcomeSection';
 import { actions } from '../../constants/quick-actions';
 import { requests } from '../../constants/urgent-requests';
 import { appointments } from '../../constants/appointments';
-import { donations } from '../../constants/donations'
+import { donations } from '../../constants/donations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -269,9 +269,7 @@ export default function MemberHomePage() {
                         <CardHeader>
                             <CardTitle className="flex items-center space-x-2">
                                 <Heart className="w-6 h-6 stroke-red-600" />
-                                <p className="text-2xl">
-                                    Recent Appointment 
-                                </p>         
+                                <p className="text-2xl">Recent Appointment</p>
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
@@ -280,12 +278,20 @@ export default function MemberHomePage() {
                                     <CardContent className="p-3">
                                         <section className="flex items-center justify-between">
                                             <article>
-                                                <h4 className="font-medium">{donation.type}</h4>
-                                                <p className="text-sm text-zinc-600">{donation.location}</p>
+                                                <h4 className="font-medium">
+                                                    {donation.type}
+                                                </h4>
+                                                <p className="text-sm text-zinc-600">
+                                                    {donation.location}
+                                                </p>
                                             </article>
                                             <aside className="text-right">
-                                                <span className="font-medium block">{donation.amount}</span>
-                                                <span className="text-sm text-gray-500 block">{donation.date}</span>
+                                                <span className="font-medium block">
+                                                    {donation.amount}
+                                                </span>
+                                                <span className="text-sm text-gray-500 block">
+                                                    {donation.date}
+                                                </span>
                                             </aside>
                                         </section>
                                     </CardContent>
