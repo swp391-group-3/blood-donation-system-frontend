@@ -46,36 +46,54 @@ export default function MemberHomePage() {
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <Card>
-                      <CardHeader>
-                        <CardTitle className="flex items-center space-x-2">
-                          <Droplet className="w-6 h-6 stroke-red-600"></Droplet>
-                          <p className="text-2xl">Donation Status</p>
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-4">
-                        <div className="grid grid-cols-2 gap-4 text-sm">
-                          <div>
-                            <div className="text-zinc-500">Last Donation</div>
-                            <div className="font-medium text-zinc-950">1/1/2023</div>
-                          </div>
-                          <div>
-                            <div className="text-zinc-500">Next Eligible Date</div>
-                            <div className="font-medium text-zinc-950">30/12/2024</div>
-                          </div>
-                          <div>
-                            <div className="text-zinc-500">Days Until Eligible</div>
-                            <div className="font-medium text-zinc-950">5 days</div>
-                          </div>
-                          <div>
-                            <div className="text-zinc-500">Eligibility Progress</div>
-                            <div className="font-medium text-zinc-950">Ready to donate!</div>
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Progress value={85} className="h-2" />
-                        </div>
-                        <Button className="w-full bg-red-600 hover:bg-red-700">Schedule Donation</Button>
-                      </CardContent>
+                        <CardHeader>
+                            <CardTitle className="flex items-center space-x-2">
+                                <Droplet className="w-6 h-6 stroke-red-600"></Droplet>
+                                <p className="text-2xl">Donation Status</p>
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <div className="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <div className="text-zinc-500">
+                                        Last Donation
+                                    </div>
+                                    <div className="font-medium text-zinc-950">
+                                        1/1/2023
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-zinc-500">
+                                        Next Eligible Date
+                                    </div>
+                                    <div className="font-medium text-zinc-950">
+                                        30/12/2024
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-zinc-500">
+                                        Days Until Eligible
+                                    </div>
+                                    <div className="font-medium text-zinc-950">
+                                        5 days
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-zinc-500">
+                                        Eligibility Progress
+                                    </div>
+                                    <div className="font-medium text-zinc-950">
+                                        Ready to donate!
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                <Progress value={85} className="h-2" />
+                            </div>
+                            <Button className="w-full bg-red-600 hover:bg-red-700">
+                                Schedule Donation
+                            </Button>
+                        </CardContent>
                     </Card>
                 </div>
             </div>
