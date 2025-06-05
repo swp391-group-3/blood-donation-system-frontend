@@ -2,12 +2,20 @@ import { HomepageLayout } from '@/components/HomepageLayout';
 import { WelcomeSection } from '@/components/WelcomeSection';
 import { actions } from '../../constants/quick-actions';
 import { requests } from '../../constants/urgent-requests';
-import { appointments} from '../../constants/appointments'
+import { appointments } from '../../constants/appointments';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { Droplet, Heart, MapPin, Clock, Hospital, Dot, Calendar } from 'lucide-react';
+import {
+    Droplet,
+    Heart,
+    MapPin,
+    Clock,
+    Hospital,
+    Dot,
+    Calendar,
+} from 'lucide-react';
 
 export default function MemberHomePage() {
     return (
@@ -212,26 +220,38 @@ export default function MemberHomePage() {
                     <Card>
                         <CardHeader>
                             <CardTitle className="flex items-center space-x-2">
-                                <Calendar className="w-6 h-6 stroke-blue-500"/>
-                                <p className="text-2xl ">Upcoming Appointments</p>
+                                <Calendar className="w-6 h-6 stroke-blue-500" />
+                                <p className="text-2xl ">
+                                    Upcoming Appointments
+                                </p>
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             {appointments.map((appointment, index) => (
                                 <Card key={index} className="border">
-                                    <CardContent className='p-4'>
+                                    <CardContent className="p-4">
                                         <header className="flex items-center justify-between mb-2">
-                                            <h4 className="font-medium">{appointment.type}</h4>
-                                            <Badge className={appointment.statusColor}>{appointment.status}</Badge>
+                                            <h4 className="font-medium">
+                                                {appointment.type}
+                                            </h4>
+                                            <Badge
+                                                className={
+                                                    appointment.statusColor
+                                                }
+                                            >
+                                                {appointment.status}
+                                            </Badge>
                                         </header>
-                                        <p className="text-sm text-gray-600 mb-2">{appointment.location}</p>
+                                        <p className="text-sm text-gray-600 mb-2">
+                                            {appointment.location}
+                                        </p>
                                         <footer className="flex items-center space-x-4 text-sm text-gray-500">
                                             <span className="flex items-center">
-                                                <Calendar className="w-3 h-3 mr-1"/>
+                                                <Calendar className="w-3 h-3 mr-1" />
                                                 {appointment.date}
                                             </span>
                                             <span className="flex items-center">
-                                                <Clock className="w-3 h-3 mr-1"/>
+                                                <Clock className="w-3 h-3 mr-1" />
                                                 {appointment.time}
                                             </span>
                                         </footer>
