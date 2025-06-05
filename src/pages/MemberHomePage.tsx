@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { HomepageLayout } from '@/components/HomepageLayout';
 import { WelcomeSection } from '@/components/WelcomeSection';
 import { actions, requests, appointments, donations } from '../../constants/sample-data'
@@ -32,23 +33,27 @@ export default function MemberHomePage() {
                                 className="p-0 h-auto bg-transparent shadow-none hover:shadow-md transition-shadow text-left"
                                 key={index}
                             >
-                                <Card className="h-full">
-                                    <CardContent className="p-6 text-center flex flex-col items-center">
-                                        <div
-                                            className={`inline-flex p-5 rounded-full ${action.color} mb-3`}
-                                        >
-                                            <action.icon
-                                                style={{
-                                                    width: '20px',
-                                                    height: '20px',
-                                                }}
-                                            />
-                                        </div>
-                                        <h2 className="font-medium text-base text-zinc-950">
-                                            {action.title}
-                                        </h2>
-                                    </CardContent>
-                                </Card>
+                                <NavLink
+                                    to={action.path}
+                                >
+                                    <Card className="h-full w-full">
+                                        <CardContent className="p-6 text-center flex flex-col items-center">
+                                            <div
+                                                className={`inline-flex p-5 rounded-full ${action.color} mb-3`}
+                                            >
+                                                <action.icon
+                                                    style={{
+                                                        width: '20px',
+                                                        height: '20px',
+                                                    }}
+                                                />
+                                            </div>
+                                            <h2 className="font-medium text-base text-zinc-950">
+                                                {action.title}
+                                            </h2>
+                                        </CardContent>
+                                    </Card>
+                                </NavLink>
                             </Button>
                         ))}
                     </div>
