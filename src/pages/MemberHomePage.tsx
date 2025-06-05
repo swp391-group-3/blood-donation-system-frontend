@@ -152,7 +152,7 @@ export default function MemberHomePage() {
                             {requests.map((request, index) => (
                                 <Card
                                     key={index}
-                                    className={`border ${request.compatible ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}
+                                    className={`border ${request.compatible ? 'bg-green-50 border-green-200' : 'bg-zinc-50 border-zinc-200'}`}
                                 >
                                     <CardContent className="p-4">
                                         <div className="flex items-center justify-between">
@@ -166,7 +166,7 @@ export default function MemberHomePage() {
                                                     <h4 className="font-medium">
                                                         {request.hospital}
                                                     </h4>
-                                                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                                    <div className="flex items-center space-x-4 text-sm text-zinc-500">
                                                         <span className="flex items-center">
                                                             <MapPin className="w-3 h-3 mr-1" />
                                                             {request.distance}{' '}
@@ -181,7 +181,7 @@ export default function MemberHomePage() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="flex items-center space-x-2">
+                                            <div className="flex flex-col items-start space-y-2">
                                                 {request.compatible && (
                                                     <Badge
                                                         variant="secondary"
@@ -195,7 +195,7 @@ export default function MemberHomePage() {
                                                     className={
                                                         request.compatible
                                                             ? 'bg-red-600 hover:bg-red-700'
-                                                            : 'bg-gray-600 hover:bg-gray-700'
+                                                            : 'bg-zinc-600 hover:bg-zinc-700'
                                                     }
                                                 >
                                                     {request.compatible
@@ -240,7 +240,7 @@ export default function MemberHomePage() {
                                                 {appointment.status}
                                             </Badge>
                                         </header>
-                                        <p className="text-sm text-gray-600 mb-2">
+                                        <p className="text-sm text-zinc-600 mb-2">
                                             {appointment.location}
                                         </p>
                                         <footer className="flex items-center space-x-4 text-sm text-gray-500">
@@ -271,7 +271,7 @@ export default function MemberHomePage() {
                         </CardHeader>
                         <CardContent className="space-y-4">
                             {donations.map((donation, index) => (
-                                <Card key={index} className="bg-zinc-50">
+                                <Card key={index} className="border">
                                     <CardContent className="p-3">
                                         <section className="flex items-center justify-between">
                                             <article>
@@ -286,7 +286,7 @@ export default function MemberHomePage() {
                                                 <span className="font-medium block">
                                                     {donation.amount}
                                                 </span>
-                                                <span className="text-sm text-gray-500 block">
+                                                <span className="text-sm text-zinc-500 block">
                                                     {donation.date}
                                                 </span>
                                             </aside>
