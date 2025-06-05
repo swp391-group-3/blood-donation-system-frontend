@@ -1,10 +1,12 @@
 import { HomepageLayout } from '@/components/HomepageLayout';
 import { WelcomeSection } from '@/components/WelcomeSection';
 import { actions } from '../../constants/quick-actions';
+import { requests } from '../../constants/urgent-requests'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Droplet, Heart } from 'lucide-react';
+import { Badge } from '@/components/ui/badge'
+import { Droplet, Heart, MapPin, Clock, Hospital, Dot } from 'lucide-react';
 
 export default function MemberHomePage() {
     return (
@@ -133,6 +135,44 @@ export default function MemberHomePage() {
                         </CardContent>
                     </Card>
                 </div>
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center space-x-2">
+                            <Hospital className="w-6 h-6 stroke-red-600"/>
+                            <p className="text-2xl">Urgent Blood Request</p>
+                        </CardTitle>
+                        <CardContent className="space-y-4">
+                            {requests.map((request, index) => (
+                                <Card
+                                    key={index}
+                                    className={`border ${request.compatible ? "bg-green-50 border-green-200" : "bg-gray-50 border-gray-200"}`}                                
+                                >
+                                    <CardContent className="p-4">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center space-x-3">
+                                                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                                                    <span className="text-red-600 text-sm font-medium">{request.bloodType}</span>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-medium">{request.hospital}</h4>
+                                                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                                        <span className="flex items-center">
+                                                            <MapPin className="w-3 h-3 mr-1" />
+                                                            {request.distance} <Dot /> {request.type}
+                                                        </span>
+
+
+                                                    </div>
+                                                </div>                            
+                                            </div>
+                                        </div>
+                                    </CardContent>    
+                                </Card>
+                            ))}
+
+                        </CardContent>
+                    </CardHeader>
+                </Card>
             </div>
         </HomepageLayout>
     );
