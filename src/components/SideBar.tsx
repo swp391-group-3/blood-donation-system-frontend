@@ -1,5 +1,5 @@
 import { Heart, LogOut } from 'lucide-react';
-import { sidebarItems } from '../../constants/sidebar-items';
+import { sidebarItems } from '../../constants/sample-data';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
