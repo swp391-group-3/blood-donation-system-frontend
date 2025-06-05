@@ -1,11 +1,11 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 import MemberHomePage from './pages/MemberHomePage';
 import BloodRequestPage from './pages/BloodRequestPage';
-import AppointmentPage from "./pages/AppointmentPage";
-import HealthProfilePage from "./pages/HealthProfilePage";
-import ImpactTrackerPage from "./pages/ImpactTrackerPage";
-import EmergencyAlert from "./pages/EmergencyAlertPage";
-import SettingProfilePage from "./pages/SettingProfilePage";
+import AppointmentPage from './pages/AppointmentPage';
+import HealthProfilePage from './pages/HealthProfilePage';
+import ImpactTrackerPage from './pages/ImpactTrackerPage';
+import EmergencyAlert from './pages/EmergencyAlertPage';
+import SettingProfilePage from './pages/SettingProfilePage';
 
 function App() {
     return (
@@ -22,4 +22,3 @@ function App() {
 }
 
 export default App;
-

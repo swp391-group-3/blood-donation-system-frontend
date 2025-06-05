@@ -10,7 +10,7 @@ import {
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 export function SideBar() {
     return (
@@ -35,9 +35,7 @@ export function SideBar() {
                             item.active && 'bg-red-50 text-red-600',
                         )}
                     >
-                        <NavLink
-                            to={item.path}
-                        >
+                        <NavLink to={item.path}>
                             <item.icon className="mr-3 h-4 w-4" />
                             {item.label}
                         </NavLink>

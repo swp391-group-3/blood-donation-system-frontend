@@ -9,7 +9,6 @@ import {
     Settings,
 } from 'lucide-react';
 
-
 export const requests = [
     {
         hospital: 'General Hospital',
@@ -30,35 +29,54 @@ export const requests = [
 ];
 
 export const sidebarItems = [
-    { icon: House, label: 'Dashboard', active: true, path: "/" },
-    { icon: Droplet, label: 'Blood Requests', active: false, path: "/blood-request" },
-    { icon: Calendar, label: 'Appointments', active: false, path: "/appointment"},
-    { icon: Activity, label: 'Health Profile', active: false, path: "/health-profile" },
-    { icon: Award, label: 'Achievements', active: false, path: "/" },
-    { icon: Heart, label: 'Impact Tracker', active: false, path: "/impact" },
-    { icon: CircleAlert, label: 'Emergency Alerts', active: false, path: "/emergency" },
-    { icon: Settings, label: 'Settings', active: false, path: "/profile" },
+    { icon: House, label: 'Dashboard', active: true, path: '/' },
+    {
+        icon: Droplet,
+        label: 'Blood Requests',
+        active: false,
+        path: '/blood-request',
+    },
+    {
+        icon: Calendar,
+        label: 'Appointments',
+        active: false,
+        path: '/appointment',
+    },
+    {
+        icon: Activity,
+        label: 'Health Profile',
+        active: false,
+        path: '/health-profile',
+    },
+    { icon: Award, label: 'Achievements', active: false, path: '/' },
+    { icon: Heart, label: 'Impact Tracker', active: false, path: '/impact' },
+    {
+        icon: CircleAlert,
+        label: 'Emergency Alerts',
+        active: false,
+        path: '/emergency',
+    },
+    { icon: Settings, label: 'Settings', active: false, path: '/profile' },
 ];
-
 
 export const actions = [
     {
         icon: Calendar,
         title: 'Schedule Donation',
         color: 'bg-green-50 text-green-600',
-        path: "/appointment",
+        path: '/appointment',
     },
     {
         icon: Droplet,
         title: 'View Requests',
         color: 'bg-red-50 text-red-500',
-        path: "/blood-request",
+        path: '/blood-request',
     },
     {
         icon: Activity,
         title: 'Health Records',
         color: 'bg-purple-50 text-purple-600',
-        path: "/health-profile"
+        path: '/health-profile',
     },
 ];
 
@@ -101,5 +119,3 @@ export const appointments = [
         statusColor: 'bg-yellow-100 text-yellow-800',
     },
 ];
-
-

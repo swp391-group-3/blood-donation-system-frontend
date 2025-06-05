@@ -1,7 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import { HomepageLayout } from '@/components/HomepageLayout';
 import { WelcomeSection } from '@/components/WelcomeSection';
-import { actions, requests, appointments, donations } from '../../constants/sample-data'
+import {
+    actions,
+    requests,
+    appointments,
+    donations,
+} from '../../constants/sample-data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -33,9 +38,7 @@ export default function MemberHomePage() {
                                 className="p-0 h-auto bg-transparent shadow-none hover:shadow-md transition-shadow text-left"
                                 key={index}
                             >
-                                <NavLink
-                                    to={action.path}
-                                >
+                                <NavLink to={action.path}>
                                     <Card className="h-full w-full">
                                         <CardContent className="p-6 text-center flex flex-col items-center">
                                             <div
@@ -102,12 +105,16 @@ export default function MemberHomePage() {
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <Progress value={100} className="h-2 bg-green-600 [&>div]:bg-green-600" />
+                                <Progress
+                                    value={100}
+                                    className="h-2 bg-green-600 [&>div]:bg-green-600"
+                                />
                             </div>
-                            <Button asChild className="w-full bg-red-600 hover:bg-red-700">
-                                <NavLink
-                                    to="/appointment"
-                                >
+                            <Button
+                                asChild
+                                className="w-full bg-red-600 hover:bg-red-700"
+                            >
+                                <NavLink to="/appointment">
                                     Schedule Donation
                                 </NavLink>
                             </Button>
@@ -145,12 +152,12 @@ export default function MemberHomePage() {
                                     </span>
                                 </div>
                             </div>
-                            <Button asChild variant="outline" className="w-full">
-                                <NavLink
-                                    to="/impact"
-                                >
-                                    View Full Impact
-                                </NavLink>
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="w-full"
+                            >
+                                <NavLink to="/impact">View Full Impact</NavLink>
                             </Button>
                         </CardContent>
                     </Card>
@@ -204,34 +211,36 @@ export default function MemberHomePage() {
                                                     </Badge>
                                                 )}
                                                 {request.compatible ? (
-                                            <Button
-                                                size="sm"
-                                                asChild
-                                                className="bg-red-600 hover:bg-red-700"
-                                            >
-                                                <NavLink to="/blood-request">
-                                                    Response
-                                                </NavLink>
-                                            </Button>
-                                            ) : (
-                                            <Button
-                                                size="sm"
-                                                className="bg-zinc-600 hover:bg-zinc-700"
-                                            >
-                                                Not Compatible
-                                            </Button>
-                                            )}
+                                                    <Button
+                                                        size="sm"
+                                                        asChild
+                                                        className="bg-red-600 hover:bg-red-700"
+                                                    >
+                                                        <NavLink to="/blood-request">
+                                                            Response
+                                                        </NavLink>
+                                                    </Button>
+                                                ) : (
+                                                    <Button
+                                                        size="sm"
+                                                        className="bg-zinc-600 hover:bg-zinc-700"
+                                                    >
+                                                        Not Compatible
+                                                    </Button>
+                                                )}
                                             </div>
                                         </div>
                                     </CardContent>
                                 </Card>
                             ))}
-                            <Button asChild variant="outline" className="w-full">
-                                <NavLink
-                                    to="/blood-request"
-                                >
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="w-full"
+                            >
+                                <NavLink to="/blood-request">
                                     View All Requests
-                                </NavLink>                            
+                                </NavLink>
                             </Button>
                         </CardContent>
                     </CardHeader>
@@ -279,10 +288,12 @@ export default function MemberHomePage() {
                                     </CardContent>
                                 </Card>
                             ))}
-                            <Button asChild variant="outline" className="w-full">
-                                <NavLink
-                                    to="/appointment"
-                                >
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="w-full"
+                            >
+                                <NavLink to="/appointment">
                                     Schedule Appointment
                                 </NavLink>
                             </Button>
@@ -321,10 +332,12 @@ export default function MemberHomePage() {
                                     </CardContent>
                                 </Card>
                             ))}
-                            <Button asChild variant="outline" className="w-full">
-                                <NavLink
-                                    to="/appointment"
-                                >
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="w-full"
+                            >
+                                <NavLink to="/appointment">
                                     Schedule Appointment
                                 </NavLink>
                             </Button>
