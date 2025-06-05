@@ -97,7 +97,7 @@ export default function MemberHomePage() {
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <Progress value={85} className="h-2" />
+                                <Progress value={100} className="h-2 bg-green-600 [&>div]:bg-green-600" />
                             </div>
                             <Button className="w-full bg-red-600 hover:bg-red-700">
                                 Schedule Donation
