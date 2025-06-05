@@ -7,7 +7,7 @@ interface HomepageLayoutProps {
 
 export function HomepageLayout({ children }: HomepageLayoutProps) {
     return (
-        <div className="flex h-screen bg-gray-50">
+        <div className="flex bg-gray-50">
             <SideBar />
             <div className="flex-1 flex flex-col">{children}</div>
         </div>
