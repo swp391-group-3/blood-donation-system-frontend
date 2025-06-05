@@ -30,14 +30,14 @@ export const requests = [
 ];
 
 export const sidebarItems = [
-    { icon: House, label: 'Dashboard', active: true },
-    { icon: Droplet, label: 'Blood Requests', active: false },
-    { icon: Calendar, label: 'Appointments', active: false },
-    { icon: Activity, label: 'Health Profile', active: false },
-    { icon: Award, label: 'Achievements', active: false },
-    { icon: Heart, label: 'Impact Tracker', active: false },
-    { icon: CircleAlert, label: 'Emergency Alerts', active: false },
-    { icon: Settings, label: 'Settings', active: false },
+    { icon: House, label: 'Dashboard', active: true, path: "/" },
+    { icon: Droplet, label: 'Blood Requests', active: false, path: "/blood-request" },
+    { icon: Calendar, label: 'Appointments', active: false, path: "/appointment"},
+    { icon: Activity, label: 'Health Profile', active: false, path: "/health-profile" },
+    { icon: Award, label: 'Achievements', active: false, path: "/" },
+    { icon: Heart, label: 'Impact Tracker', active: false, path: "/impact" },
+    { icon: CircleAlert, label: 'Emergency Alerts', active: false, path: "/emergency" },
+    { icon: Settings, label: 'Settings', active: false, path: "/profile" },
 ];
 
 
