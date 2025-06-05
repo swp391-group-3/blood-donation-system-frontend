@@ -105,8 +105,12 @@ export default function MemberHomePage() {
                         <CardContent className="space-y-6">
                             <div className="grid grid-cols-1">
                                 <div className="text-center">
-                                    <div className="text-2xl font-bold text-red-600">8</div>
-                                    <div className="text-sm text-gray-500">Donations</div>
+                                    <div className="text-2xl font-bold text-red-600">
+                                        8
+                                    </div>
+                                    <div className="text-sm text-gray-500">
+                                        Donations
+                                    </div>
                                 </div>
                             </div>
 
@@ -118,7 +122,9 @@ export default function MemberHomePage() {
 
                                 <div className="flex justify-between text-sm">
                                     <span>Next Achievement</span>
-                                    <span className="text-gray-500">2 donations to go</span>
+                                    <span className="text-gray-500">
+                                        2 donations to go
+                                    </span>
                                 </div>
                             </div>
                             <Button variant="outline" className="w-full">
