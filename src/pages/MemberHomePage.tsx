@@ -3,7 +3,7 @@ import { WelcomeSection } from '@/components/WelcomeSection';
 import { actions } from '../../constants/quick-actions';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progess } from '@/components/ui/progress';
+import { Progress } from '@/components/ui/progress';
 import { Droplet } from 'lucide-react';
 
 export default function MemberHomePage() {
@@ -58,12 +58,26 @@ export default function MemberHomePage() {
                             <div className="text-zinc-500">Last Donation</div>
                             <div className="font-medium text-zinc-950">1/1/2023</div>
                           </div>
-
+                          <div>
+                            <div className="text-zinc-500">Next Eligible Date</div>
+                            <div className="font-medium text-zinc-950">30/12/2024</div>
+                          </div>
+                          <div>
+                            <div className="text-zinc-500">Days Until Eligible</div>
+                            <div className="font-medium text-zinc-950">5 days</div>
+                          </div>
+                          <div>
+                            <div className="text-zinc-500">Eligibility Progress</div>
+                            <div className="font-medium text-zinc-950">Ready to donate!</div>
+                          </div>
                         </div>
+                        <div className="space-y-2">
+                          <Progress value={85} className="h-2" />
+                        </div>
+                        <Button className="w-full bg-red-600 hover:bg-red-700">Schedule Donation</Button>
                       </CardContent>
                     </Card>
                 </div>
-
             </div>
         </HomepageLayout>
     );
