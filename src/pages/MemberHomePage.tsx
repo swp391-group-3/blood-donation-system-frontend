@@ -61,7 +61,7 @@ export default function MemberHomePage() {
                                 <p className="text-2xl">Donation Status</p>
                             </CardTitle>
                         </CardHeader>
-                        <CardContent className="space-y-4">
+                        <CardContent className="space-y-5">
                             <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div>
                                     <div className="text-zinc-500">
@@ -117,13 +117,13 @@ export default function MemberHomePage() {
                                     <div className="text-2xl font-bold text-red-600">
                                         8
                                     </div>
-                                    <div className="text-sm text-gray-500">
+                                    <div className="text-sm text-zinc-500">
                                         Donations
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
+                            <div className="space-y-1">
                                 <div className="flex justify-between text-sm">
                                     <span>Blood Donated</span>
                                     <span className="font-medium">3600ml</span>
@@ -131,7 +131,7 @@ export default function MemberHomePage() {
 
                                 <div className="flex justify-between text-sm">
                                     <span>Next Achievement</span>
-                                    <span className="text-gray-500">
+                                    <span className="text-zinc-500">
                                         2 donations to go
                                     </span>
                                 </div>
@@ -143,7 +143,7 @@ export default function MemberHomePage() {
                     </Card>
                 </div>
                 <Card>
-                    <CardHeader>
+                    <CardHeader className="space-y-4">
                         <CardTitle className="flex items-center space-x-2">
                             <Hospital className="w-6 h-6 stroke-red-600" />
                             <p className="text-2xl">Urgent Blood Request</p>
