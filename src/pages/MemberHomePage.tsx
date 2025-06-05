@@ -104,8 +104,12 @@ export default function MemberHomePage() {
                             <div className="space-y-2">
                                 <Progress value={100} className="h-2 bg-green-600 [&>div]:bg-green-600" />
                             </div>
-                            <Button className="w-full bg-red-600 hover:bg-red-700">
-                                Schedule Donation
+                            <Button asChild className="w-full bg-red-600 hover:bg-red-700">
+                                <NavLink
+                                    to="/appointment"
+                                >
+                                    Schedule Donation
+                                </NavLink>
                             </Button>
                         </CardContent>
                     </Card>
@@ -141,8 +145,12 @@ export default function MemberHomePage() {
                                     </span>
                                 </div>
                             </div>
-                            <Button variant="outline" className="w-full">
-                                View Full Impact
+                            <Button asChild variant="outline" className="w-full">
+                                <NavLink
+                                    to="/impact"
+                                >
+                                    View Full Impact
+                                </NavLink>
                             </Button>
                         </CardContent>
                     </Card>
@@ -195,25 +203,35 @@ export default function MemberHomePage() {
                                                         Compatible
                                                     </Badge>
                                                 )}
-                                                <Button
-                                                    size="sm"
-                                                    className={
-                                                        request.compatible
-                                                            ? 'bg-red-600 hover:bg-red-700'
-                                                            : 'bg-zinc-600 hover:bg-zinc-700'
-                                                    }
-                                                >
-                                                    {request.compatible
-                                                        ? 'Response'
-                                                        : 'Not Compatible'}
-                                                </Button>
+                                                {request.compatible ? (
+                                            <Button
+                                                size="sm"
+                                                asChild
+                                                className="bg-red-600 hover:bg-red-700"
+                                            >
+                                                <NavLink to="/blood-request">
+                                                    Response
+                                                </NavLink>
+                                            </Button>
+                                            ) : (
+                                            <Button
+                                                size="sm"
+                                                className="bg-zinc-600 hover:bg-zinc-700"
+                                            >
+                                                Not Compatible
+                                            </Button>
+                                            )}
                                             </div>
                                         </div>
                                     </CardContent>
                                 </Card>
                             ))}
-                            <Button variant="outline" className="w-full">
-                                View All Requests
+                            <Button asChild variant="outline" className="w-full">
+                                <NavLink
+                                    to="/blood-request"
+                                >
+                                    View All Requests
+                                </NavLink>                            
                             </Button>
                         </CardContent>
                     </CardHeader>
@@ -261,8 +279,12 @@ export default function MemberHomePage() {
                                     </CardContent>
                                 </Card>
                             ))}
-                            <Button variant="outline" className="w-full">
-                                Schedule Appointment
+                            <Button asChild variant="outline" className="w-full">
+                                <NavLink
+                                    to="/appointment"
+                                >
+                                    Schedule Appointment
+                                </NavLink>
                             </Button>
                         </CardContent>
                     </Card>
@@ -299,8 +321,12 @@ export default function MemberHomePage() {
                                     </CardContent>
                                 </Card>
                             ))}
-                            <Button variant="outline" className="w-full">
-                                Schedule Appointment
+                            <Button asChild variant="outline" className="w-full">
+                                <NavLink
+                                    to="/appointment"
+                                >
+                                    Schedule Appointment
+                                </NavLink>
                             </Button>
                         </CardContent>
                     </Card>
