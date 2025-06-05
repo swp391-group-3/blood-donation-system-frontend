@@ -4,7 +4,7 @@ import { actions } from '../../constants/quick-actions';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Droplet } from 'lucide-react';
+import { Droplet, Heart } from 'lucide-react';
 
 export default function MemberHomePage() {
     return (
@@ -92,6 +92,37 @@ export default function MemberHomePage() {
                             </div>
                             <Button className="w-full bg-red-600 hover:bg-red-700">
                                 Schedule Donation
+                            </Button>
+                        </CardContent>
+                    </Card>
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="flex items-center space-x-2">
+                                <Heart className="w-6 h-6 stroke-red-600" />
+                                <p className="text-2xl">Your Impact</p>
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                            <div className="grid grid-cols-1">
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-red-600">8</div>
+                                    <div className="text-sm text-gray-500">Donations</div>
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <div className="flex justify-between text-sm">
+                                    <span>Blood Donated</span>
+                                    <span className="font-medium">3600ml</span>
+                                </div>
+
+                                <div className="flex justify-between text-sm">
+                                    <span>Next Achievement</span>
+                                    <span className="text-gray-500">2 donations to go</span>
+                                </div>
+                            </div>
+                            <Button variant="outline" className="w-full">
+                                View Full Impact
                             </Button>
                         </CardContent>
                     </Card>
