@@ -20,7 +20,7 @@ export default function MemberHomePage() {
         <HomepageLayout>
             <div className="flex-1 space-y-6 p-6">
                 <WelcomeSection />
-                <div>
+                <div className="max-w-2xl">
                     <h2 className="text-lg font-semibold text-zinc-950 mb-4">
                         Quick Actions
                     </h2>
@@ -39,12 +39,12 @@ export default function MemberHomePage() {
                                         >
                                             <action.icon
                                                 style={{
-                                                    width: '30px',
-                                                    height: '30px',
+                                                    width: '20px',
+                                                    height: '20px',
                                                 }}
                                             />
                                         </div>
-                                        <h2 className="font-medium text-xl text-zinc-950">
+                                        <h2 className="font-medium text-base text-zinc-950">
                                             {action.title}
                                         </h2>
                                     </CardContent>
