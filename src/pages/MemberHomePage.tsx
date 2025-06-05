@@ -160,16 +160,33 @@ export default function MemberHomePage() {
                                                             <MapPin className="w-3 h-3 mr-1" />
                                                             {request.distance} <Dot /> {request.type}
                                                         </span>
-
-
+                                                        <span className="flex items-center">
+                                                            <Clock className="w-3 h-3 mr-1"/>
+                                                            Posted {request.postedDate}
+                                                        </span>
                                                     </div>
                                                 </div>                            
+                                            </div>
+                                            <div className="flex items-center space-x-2">
+                                                {request.compatible && (
+                                                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                                                        Compatible
+                                                    </Badge>
+                                                )}
+                                                <Button
+                                                    size="sm"
+                                                    className={request.compatible ? "bg-red-600 hover:bg-red-700" : "bg-gray-600 hover:bg-gray-700"}
+                                                >
+                                                    {request.compatible ? "Response" : "Not Compatible"}
+                                                </Button>
                                             </div>
                                         </div>
                                     </CardContent>    
                                 </Card>
                             ))}
-
+                            <Button variant="outline" className="w-full">
+                                View All Requests
+                            </Button>
                         </CardContent>
                     </CardHeader>
                 </Card>
