@@ -1,4 +1,7 @@
-import { Heart } from 'lucide-react';
+import {
+    Heart,
+    LogOut,
+} from 'lucide-react';
 import { sidebarItems } from '../../constants/sidebar-items';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -38,26 +41,40 @@ export function SideBar() {
                     </Button>
                 ))}
             </div>
-            <div className="flex items-center space-x-4">
-                <DropdownMenu>
-                    <DropdownMenuTrigger>
-                        <Avatar>
-                            <AvatarImage src="/avatars/sample-avatar.png" />
-                            <AvatarFallback>ND</AvatarFallback>
+
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <button className="flex items-center gap-3 border-r border-zinc-300 px-5 py-3 transition hover:bg-zinc-50 focus:outline-none">
+                        <Avatar className="h-8 w-8">
+                            <AvatarImage
+                                src="../../public/avatars/sample-avatar.png"
+                                alt="User avatar"
+                            />
+                            <AvatarFallback>SC</AvatarFallback>
                         </Avatar>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                        <DropdownMenuItem>
-                            My Profile
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            View Health Record
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>Logout</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            </div>
+                        <div className="flex flex-col items-start">
+                            <span className="text-sm font-medium">Nam Dang</span>
+                            <span className="text-xs text-gray-500">
+                                m@example.com
+                            </span>
+                        </div>
+                    </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-64">
+                    <DropdownMenuItem>
+                        My Profile
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        View Health Record
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        <LogOut className="mr-2 h-4 w-4" />
+                        Log out
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+
         </div>
     );
 }
