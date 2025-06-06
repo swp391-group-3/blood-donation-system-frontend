@@ -228,8 +228,10 @@ export default function MemberHomePage() {
                                 </CardContent>
                             </Card>
                         ))}
-                        <Button variant="outline" className="w-full">
-                            View All Requests
+                        <Button asChild variant="outline" className="w-full">
+                            <NavLink to="/blood-request">
+                                View All Requests
+                            </NavLink>
                         </Button>
                     </CardContent>
                 </Card>
