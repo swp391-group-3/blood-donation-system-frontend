@@ -161,7 +161,7 @@ export default function MemberHomePage() {
                             <AlertCircle className="h-5 w-5 text-red-600" />
                             <span>Urgent Blood Requests</span>
                         </CardTitle>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-zinc-600">
                             Active blood requests that match your blood type or
                             need urgent attention
                         </p>
@@ -170,10 +170,9 @@ export default function MemberHomePage() {
                         {requests.map((request) => (
                             <Card
                                 key={request.id}
-                                className={`border-0 ${request.compatible ? 'bg-green-50' : 'bg-gray-50'} relative overflow-hidden`}
+                                className={`border-0 ${request.compatible ? 'bg-green-50' : 'bg-zinc-50'} relative overflow-hidden`}
                             >
                                 <CardContent className="p-4">
-                                    {/* Blood Type Indicator */}
                                     <div className="absolute top-4 left-4">
                                         <span className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
                                             <span className="text-red-600 text-sm font-medium">
@@ -181,24 +180,20 @@ export default function MemberHomePage() {
                                             </span>
                                         </span>
                                     </div>
-
-                                    {/* Flex row: Info left - Actions right */}
                                     <div className="flex items-center justify-between mt-4">
-                                        {/* Left: Info */}
                                         <div>
-                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                                            <h3 className="text-lg font-semibold text-zinc-900 mb-1">
                                                 {request.title}
                                             </h3>
-                                            <p className="text-sm text-gray-600">
+                                            <p className="text-sm text-zinc-600">
                                                 Requested by{' '}
                                                 {request.staff_name}
                                             </p>
-                                            <div className="flex items-center mt-4 text-sm text-gray-500">
+                                            <div className="flex items-center mt-4 text-sm text-zinc-500">
                                                 <Clock className="w-4 h-4 mr-2" />
                                                 {request.time}
                                             </div>
                                         </div>
-                                        {/* Right: Actions */}
                                         <div className="flex flex-col items-center space-y-2 ml-8">
                                             {request.compatible ? (
                                                 <Badge
@@ -210,7 +205,7 @@ export default function MemberHomePage() {
                                             ) : (
                                                 <Badge
                                                     variant="outline"
-                                                    className="text-gray-500 border-gray-300 bg-gray-100"
+                                                    className="text-gray-500 border-zinc-300 bg-zinc-100"
                                                 >
                                                     Not compatible
                                                 </Badge>
@@ -220,7 +215,7 @@ export default function MemberHomePage() {
                                                 className={
                                                     request.compatible
                                                         ? 'bg-red-600 hover:bg-red-700'
-                                                        : 'bg-gray-400'
+                                                        : 'bg-zinc-400'
                                                 }
                                                 disabled={!request.compatible}
                                             >
@@ -233,7 +228,6 @@ export default function MemberHomePage() {
                                 </CardContent>
                             </Card>
                         ))}
-
                         <Button variant="outline" className="w-full">
                             View All Requests
                         </Button>
