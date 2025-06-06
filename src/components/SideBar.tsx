@@ -48,7 +48,7 @@ export function SideBar() {
                     <button className="flex items-center gap-3 border-r border-zinc-300 px-5 py-3 transition hover:bg-zinc-50 focus:outline-none">
                         <Avatar className="h-8 w-8">
                             <AvatarImage
-                                src="../../public/avatars/sample-avatar.png"
+                                src="/avatars/sample-avatar.png"
                                 alt="User avatar"
                             />
                             <AvatarFallback>SC</AvatarFallback>
