@@ -11,13 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import {
-    Droplet,
-    Heart,
-    Clock,
-    Calendar,
-    AlertCircle,
-} from 'lucide-react';
+import { Droplet, Heart, Clock, Calendar, AlertCircle } from 'lucide-react';
 
 export default function MemberHomePage() {
     return (
@@ -164,68 +158,87 @@ export default function MemberHomePage() {
                 <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
-                        <AlertCircle className="h-5 w-5 text-red-600" />
-                        <span>Urgent Blood Requests</span>
+                            <AlertCircle className="h-5 w-5 text-red-600" />
+                            <span>Urgent Blood Requests</span>
                         </CardTitle>
                         <p className="text-sm text-gray-600">
-                        Active blood requests that match your blood type or need urgent attention
+                            Active blood requests that match your blood type or
+                            need urgent attention
                         </p>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         {requests.map((request) => (
-                        <Card
-                            key={request.id}
-                            className={`border-0 ${request.compatible ? "bg-green-50" : "bg-gray-50"} relative overflow-hidden`}
-                        >
-                            <CardContent className="p-4">
-                            {/* Blood Type Indicator */}
-                            <div className="absolute top-4 left-4">
-                                <span className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                                <span className="text-red-600 text-sm font-medium">{request.blood_group}</span>
-                                </span>
-                            </div>
+                            <Card
+                                key={request.id}
+                                className={`border-0 ${request.compatible ? 'bg-green-50' : 'bg-gray-50'} relative overflow-hidden`}
+                            >
+                                <CardContent className="p-4">
+                                    {/* Blood Type Indicator */}
+                                    <div className="absolute top-4 left-4">
+                                        <span className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                                            <span className="text-red-600 text-sm font-medium">
+                                                {request.blood_group}
+                                            </span>
+                                        </span>
+                                    </div>
 
-                            {/* Flex row: Info left - Actions right */}
-                            <div className="flex items-center justify-between mt-4">
-                                {/* Left: Info */}
-                                <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-1">{request.title}</h3>
-                                <p className="text-sm text-gray-600">Requested by {request.staff_name}</p>
-                                <div className="flex items-center mt-4 text-sm text-gray-500">
-                                    <Clock className="w-4 h-4 mr-2" />
-                                    {request.time}
-                                </div>
-                                </div>
-                                {/* Right: Actions */}
-                                <div className="flex flex-col items-center space-y-2 ml-8">
-                                {request.compatible ? (
-                                    <Badge variant="outline" className="text-green-700 border-green-500 bg-green-50 font-semibold">
-                                    Compatible
-                                    </Badge>
-                                ) : (
-                                    <Badge variant="outline" className="text-gray-500 border-gray-300 bg-gray-100">
-                                    Not compatible
-                                    </Badge>
-                                )}
-                                <Button
-                                    size="sm"
-                                    className={request.compatible ? "bg-red-600 hover:bg-red-700" : "bg-gray-400"}
-                                    disabled={!request.compatible}
-                                >
-                                    {request.compatible ? "Respond" : "Not Compatible"}
-                                </Button>
-                                </div>
-                            </div>
-                            </CardContent>
-                        </Card>
+                                    {/* Flex row: Info left - Actions right */}
+                                    <div className="flex items-center justify-between mt-4">
+                                        {/* Left: Info */}
+                                        <div>
+                                            <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                                                {request.title}
+                                            </h3>
+                                            <p className="text-sm text-gray-600">
+                                                Requested by{' '}
+                                                {request.staff_name}
+                                            </p>
+                                            <div className="flex items-center mt-4 text-sm text-gray-500">
+                                                <Clock className="w-4 h-4 mr-2" />
+                                                {request.time}
+                                            </div>
+                                        </div>
+                                        {/* Right: Actions */}
+                                        <div className="flex flex-col items-center space-y-2 ml-8">
+                                            {request.compatible ? (
+                                                <Badge
+                                                    variant="outline"
+                                                    className="text-green-700 border-green-500 bg-green-50 font-semibold"
+                                                >
+                                                    Compatible
+                                                </Badge>
+                                            ) : (
+                                                <Badge
+                                                    variant="outline"
+                                                    className="text-gray-500 border-gray-300 bg-gray-100"
+                                                >
+                                                    Not compatible
+                                                </Badge>
+                                            )}
+                                            <Button
+                                                size="sm"
+                                                className={
+                                                    request.compatible
+                                                        ? 'bg-red-600 hover:bg-red-700'
+                                                        : 'bg-gray-400'
+                                                }
+                                                disabled={!request.compatible}
+                                            >
+                                                {request.compatible
+                                                    ? 'Respond'
+                                                    : 'Not Compatible'}
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
                         ))}
 
                         <Button variant="outline" className="w-full">
-                        View All Requests
+                            View All Requests
                         </Button>
                     </CardContent>
-                    </Card>
-
+                </Card>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <Card>

@@ -11,21 +11,21 @@ import {
 
 export const requests = [
     {
-        id: "req-001",
-        title: "Emergency Surgery Blood Needed",
-        blood_group: "O+",
-        time: "08:00 - 18:00",
+        id: 'req-001',
+        title: 'Emergency Surgery Blood Needed',
+        blood_group: 'O+',
+        time: '08:00 - 18:00',
         compatible: true,
-        staff_name: "Dr. Smith",
-      },
-      {
-        id: "req-003",
-        title: "Accident Victim Needs Blood",
-        blood_group: "O+",
-        time: "10:00 - 16:00",
+        staff_name: 'Dr. Smith',
+    },
+    {
+        id: 'req-003',
+        title: 'Accident Victim Needs Blood',
+        blood_group: 'O+',
+        time: '10:00 - 16:00',
         compatible: true,
-        staff_name: "Dr. Wilson",
-      },
+        staff_name: 'Dr. Wilson',
+    },
 ];
 
 export const sidebarItems = [
