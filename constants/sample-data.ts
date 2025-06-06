@@ -11,8 +11,8 @@ import {
 
 export const requests = [
     {
-        hospital: 'General Hospital',
-        distance: '2.5 miles',
+
+
         type: 'Critical',
         bloodType: 'O+',
         postedDate: '5/28/2023',
@@ -83,19 +83,16 @@ export const actions = [
 export const donations = [
     {
         type: 'Whole Blood',
-        location: 'Central Blood Bank',
         amount: '450ml',
         date: '4/15/2023',
     },
     {
         type: 'Plasma',
-        location: 'Central Blood Bank',
         amount: '600ml',
         date: '4/15/2023',
     },
     {
         type: 'Platelets',
-        location: 'Central Blood Bank',
         amount: '200ml',
         date: '4/15/2023',
     },
@@ -104,7 +101,6 @@ export const donations = [
 export const appointments = [
     {
         type: 'Blood Donation',
-        location: 'Central Blood Bank',
         date: '7/10/2025',
         time: '10:00 AM',
         status: 'Confirm',
@@ -112,7 +108,6 @@ export const appointments = [
     },
     {
         type: 'Health Check',
-        location: 'Health Center',
         date: '7/10/2025',
         time: '10:00 AM',
         status: 'Pending',
