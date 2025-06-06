@@ -11,21 +11,21 @@ import {
 
 export const requests = [
     {
-
-
-        type: 'Critical',
-        bloodType: 'O+',
-        postedDate: '5/28/2023',
+        id: "req-001",
+        title: "Emergency Surgery Blood Needed",
+        blood_group: "O+",
+        time: "08:00 - 18:00",
         compatible: true,
-    },
-    {
-        hospital: 'General Hospital',
-        distance: '2.5 miles',
-        type: 'Critical',
-        bloodType: 'AB',
-        postedDate: '5/28/2023',
-        compatible: false,
-    },
+        staff_name: "Dr. Smith",
+      },
+      {
+        id: "req-003",
+        title: "Accident Victim Needs Blood",
+        blood_group: "O+",
+        time: "10:00 - 16:00",
+        compatible: true,
+        staff_name: "Dr. Wilson",
+      },
 ];
 
 export const sidebarItems = [
