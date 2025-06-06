@@ -25,22 +25,25 @@ export function SideBar() {
             </div>
 
             <div className="p-4 space-y-2 flex-1 border-r border-zinc-300">
-                {sidebarItems.map((item, index) => (
-                    <Button
-                        asChild
-                        key={index}
-                        variant="ghost"
-                        className={cn(
-                            'w-full justify-start text-zinc-600 hover:text-zinc-900 hover:bg-gray-100',
-                            item.active && 'bg-red-50 text-red-600',
-                        )}
-                    >
-                        <NavLink to={item.path}>
-                            <item.icon className="mr-3 h-4 w-4" />
-                            {item.label}
-                        </NavLink>
-                    </Button>
-                ))}
+                {sidebarItems.map((item, index) => {
+                    const isActive = item.path === "/" ? location.pathname === "/" :  location.pathname.startsWith(item.path) && item.path !== '/'
+                    return(
+                        <Button
+                            asChild
+                            key={index}
+                            variant="ghost"
+                            className={cn(
+                                'w-full justify-start text-zinc-600 hover:text-zinc-900 hover:bg-gray-100',
+                                isActive && 'bg-red-50 text-red-600',
+                            )}
+                        >
+                            <NavLink to={item.path}>
+                                <item.icon className="mr-3 h-4 w-4" />
+                                {item.label}
+                            </NavLink>
+                        </Button>
+                    );
+                })}
             </div>
 
             <DropdownMenu>

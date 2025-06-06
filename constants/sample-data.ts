@@ -48,7 +48,7 @@ export const sidebarItems = [
         active: false,
         path: '/health-profile',
     },
-    { icon: Award, label: 'Achievements', active: false, path: '/' },
+    { icon: Award, label: 'Achievements', active: false, path: '/achivement' },
     { icon: Heart, label: 'Impact Tracker', active: false, path: '/impact' },
     {
         icon: CircleAlert,
