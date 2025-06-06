@@ -1,3 +1,9 @@
+import { HomepageLayout } from "@/components/HomepageLayout";
+
 export default function BloodRequestPage() {
-    return <h1>This is Blood Request Page</h1>;
+    return (
+        <HomepageLayout>
+            
+        </HomepageLayout>
+    )
 }
