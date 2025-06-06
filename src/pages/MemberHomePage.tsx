@@ -173,41 +173,48 @@ export default function MemberHomePage() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                         {requests.map((request) => (
-                        <Card   
+                        <Card
                             key={request.id}
-                            className={`border ${request.compatible ? "bg-green-50 border-green-200" : "bg-gray-50 border-gray-200"}`}
+                            className={`border-0 ${request.compatible ? "bg-green-50" : "bg-gray-50"} relative overflow-hidden`}
                         >
                             <CardContent className="p-4">
-                            <div className="flex items-start justify-between mb-2">
-                                <div>
-                                <h4 className="font-medium text-gray-900">{request.title}</h4>
-                                <p className="text-sm text-gray-600">Requested by {request.staff_name}</p>
-                                </div>
-                                <div className="flex items-center">
+                            {/* Blood Type Indicator */}
+                            <div className="absolute top-4 left-4">
                                 <span className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                                    <span className="text-red-600 text-sm font-medium">{request.blood_group}</span>
+                                <span className="text-red-600 text-sm font-medium">{request.blood_group}</span>
                                 </span>
+                            </div>
+
+                            {/* Flex row: Info left - Actions right */}
+                            <div className="flex items-center justify-between mt-4">
+                                {/* Left: Info */}
+                                <div>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-1">{request.title}</h3>
+                                <p className="text-sm text-gray-600">Requested by {request.staff_name}</p>
+                                <div className="flex items-center mt-4 text-sm text-gray-500">
+                                    <Clock className="w-4 h-4 mr-2" />
+                                    {request.time}
                                 </div>
-                            </div>
-
-                            <div className="flex items-center mb-3 text-sm text-gray-500">
-                                <Clock className="w-3 h-3 mr-1" />
-                                {request.time}
-                            </div>
-
-                            <div className="flex items-center justify-end space-x-2">
-                                {request.compatible && (
-                                <Badge variant="secondary" className="bg-green-100 text-green-800">
+                                </div>
+                                {/* Right: Actions */}
+                                <div className="flex flex-col items-center space-y-2 ml-8">
+                                {request.compatible ? (
+                                    <Badge variant="outline" className="text-green-700 border-green-500 bg-green-50 font-semibold">
                                     Compatible
-                                </Badge>
+                                    </Badge>
+                                ) : (
+                                    <Badge variant="outline" className="text-gray-500 border-gray-300 bg-gray-100">
+                                    Not compatible
+                                    </Badge>
                                 )}
                                 <Button
-                                size="sm"
-                                className={request.compatible ? "bg-red-600 hover:bg-red-700" : "bg-gray-600 hover:bg-gray-700"}
-                                disabled={!request.compatible}
+                                    size="sm"
+                                    className={request.compatible ? "bg-red-600 hover:bg-red-700" : "bg-gray-400"}
+                                    disabled={!request.compatible}
                                 >
-                                {request.compatible ? "Respond" : "Not Compatible"}
+                                    {request.compatible ? "Respond" : "Not Compatible"}
                                 </Button>
+                                </div>
                             </div>
                             </CardContent>
                         </Card>
@@ -218,6 +225,7 @@ export default function MemberHomePage() {
                         </Button>
                     </CardContent>
                     </Card>
+
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <Card>
