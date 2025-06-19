@@ -8,7 +8,7 @@ interface NavbarProps {
 const Navbar = ({ scrollY }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
-  const [isDarkTheme, setIsDarkTheme] = useState(true)
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
 
   const navItems = [
     { name: "About", href: "#about" },
